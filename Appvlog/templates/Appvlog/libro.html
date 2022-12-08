@@ -1,0 +1,20 @@
+{% extends "Appvlog/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    </h1>Informacion del libro</h1>
+
+    Ingresar un libro:
+    <br>
+    <form action=""  method="post">{% csrf_token %}      
+        <table>   
+            {{miFormulario_li.as_table}} 
+        </table>   
+        <input type="submit",value="Enviar">
+    </form>
+
+{% endblock %}
