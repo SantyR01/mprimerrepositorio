@@ -42,6 +42,8 @@ def autor (request):
 def libro (request):
    return  HttpResponse("vista de libro")
 
+
+
 def libro (request):
     if request.method == "POST":
             miFormulario_li = Libroformulario(request.POST) # Aqui me llega la informacion del html
@@ -79,7 +81,7 @@ def sucursal (request):
                   sucursal.save()
                   return render(request, "Appvlog/inicio.html")
     else:
-        miFormulario_li = Sucursalformulario()
+        miFormulario_suc = Sucursalformulario()
  
     return render (request, "Appvlog/sucursal.html", {"miFormulario_suc": miFormulario_suc})
 
@@ -109,3 +111,15 @@ def libroapi (request):
 def sucursalapi (request):
     Todas_las_sucursales=sucursal.objects.all()
     return  HttpResponse(serializers.serialize("json", Todas_las_sucursales))
+
+
+
+def buscargenero(request):
+    
+   return render(request,"Appvlog/busquedagenero.html")
+
+
+def buscar(request):
+    genero_views= request.GET ["genero"]
+    Todos_los_libros=Libro.objects.filter(genero=genero_views)
+    return render(request, "Appvlog/resultadogenero.html", {"genero":genero_views,"libro":Todos_los_libros })

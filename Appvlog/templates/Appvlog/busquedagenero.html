@@ -1,0 +1,18 @@
+{% extends "Appvlog/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+   
+<form action="/Appvlog/buscar/"  method="get">{% csrf_token %}      
+
+    
+    
+    <input type="text" name="genero"  id="genero">
+    <input type="submit" value="Enviar">
+</form>
+  
+
+{% endblock %}

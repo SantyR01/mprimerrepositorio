@@ -1,0 +1,22 @@
+{% extends "Appvlog/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+genero:  {{genero}}
+<br>
+
+Libro:  
+
+{%for libro in libro %}
+
+    {{libro.nombre}}
+    {{libro.año_de_publicacion}}
+    
+    <br>
+{% endfor %}
+
+
+{% endblock %}

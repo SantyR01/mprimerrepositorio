@@ -8,7 +8,7 @@ class Autorformulario(forms.Form):
     pais=forms.CharField(max_length=10)
 
 class Libroformulario(forms.Form):
-    nombre_=forms.CharField(max_length=20)
+    nombre=forms.CharField(max_length=20)
     año_de_publicacion=forms.DateField()
     genero=forms.CharField(max_length=10)
 
